@@ -1,3 +1,24 @@
-<div><span>{{ctrl.typedText}}</span>
+<!-- two way binding -->
+<div>
+    <span>{{ctrl.typings}}</span>
 </div>
 
+<!-- as model value -->
+<div>
+    <span ng-value="word = ctrl.typings">{{word}}</span>
+</div>
+
+<!-- in an ng-repeat -->
+<div>
+    <span ng-repeat="word in ctrl.typings track by $index">{{word}}</span>
+</div>
+
+<!-- bound without angular-sanitize -->
+<div>
+    <span ng-bind="ctrl.typings"></span>
+</div>
+
+<!-- bound with angular sanitize -->
+<div>
+    <div ng-bind-html="ctrl.typings"></div>
+</div>
